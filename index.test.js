@@ -15,3 +15,28 @@ let testData = {
     floor: 5,
     roomNumber: 3
   }
+
+  // Showing a basic Jest unit test
+  test("2 should equal 2", () => {
+    expect(2).toBe(2);
+  });
+
+// To show that we can access our fake data
+test("First name should be Patten", () => {
+  expect(testData.firstName).toBe("Patten");
+});
+
+// Creating a descrive block to test our functions
+describe("formatTitle tests", () => {
+  //Let's test for data types
+  test("formatTitle should return a string", () => {
+    let formattedTitle = formatTitle(testData.title);
+    expect(typeof formattedTitle).toBe("string");
+  });
+});
+
+// Let's try testing the actual value from formatTitle
+test("formatTitle should shorten the bio string", () => {
+  let formattedTitle = formatTitle(testData.title);
+  expect(formattedTitle).toBe("Nulla Ac");
+});
