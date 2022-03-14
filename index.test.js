@@ -33,10 +33,20 @@ describe("formatTitle tests", () => {
     let formattedTitle = formatTitle(testData.title);
     expect(typeof formattedTitle).toBe("string");
   });
+
+  // Let's try testing the actual value from formatTitle
+  test("formatTitle should shorten the bio string", () => {
+    let formattedTitle = formatTitle(testData.title);
+    expect(formattedTitle).toBe("Nulla Ac");
+  });
 });
 
-// Let's try testing the actual value from formatTitle
-test("formatTitle should shorten the bio string", () => {
-  let formattedTitle = formatTitle(testData.title);
-  expect(formattedTitle).toBe("Nulla Ac");
+// Test toBe vs toEqual
+test("toBe vs toEqual, what's the difference", () => {
+  const myObj = {myNum: 4};
+  const myObj2 = {myNum: 4};
+  expect(myObj).toBe(myObj2); // -> fail different memory location
+  // expect(myObj).toEqual(myObj2); // -> pass
 });
+
+
